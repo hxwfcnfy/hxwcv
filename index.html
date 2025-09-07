@@ -1,236 +1,234 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>个人简历</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郝兴旺 - 个人简历</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Microsoft YaHei", Arial, sans-serif;
-      }
-      body {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
-        line-height: 1.6;
-        color: #333;
-      }
-      h1 {
-        text-align: center;
-        margin-bottom: 30px;
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-      }
-      .section {
-        margin-bottom: 30px;
-      }
-      .section h2 {
-        color: #2c3e50;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-      }
-      .personal-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .img-placeholder {
-        width: 200px;
-        height: 260px;
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #999;
-        margin-bottom: 15px;
-      }
-      .info-list {
-        list-style: none;
-        width: 100%;
-        max-width: 400px;
-      }
-      .info-list li {
-        margin-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .info-list li span:first-child {
-        font-weight: bold;
-        color: #2c3e50;
-      }
-      .course-list,
-      .skill-list {
-        list-style: none;
-        padding-left: 20px;
-      }
-      .course-list li,
-      .skill-list li {
-        margin-bottom: 6px;
-        position: relative;
-      }
-      .course-list li::before,
-      .skill-list li::before {
-        content: "•";
-        color: #3498db;
-        font-weight: bold;
-        position: absolute;
-        left: -15px;
-      }
-      .skill-category {
-        margin-bottom: 12px;
-      }
-      .skill-category h3 {
-        font-size: 16px;
-        color: #3498db;
-        margin-bottom: 8px;
-      }
-      .project-item {
-        margin-bottom: 20px;
-        padding: 15px;
-        background-color: #f9f9f9;
-        border-radius: 6px;
-      }
-      .project-item h3 {
-        color: #2c3e50;
-        margin-bottom: 5px;
-      }
-      .project-time {
-        color: #7f8c8d;
-        font-style: italic;
-        margin-bottom: 10px;
-      }
-      .personal-evaluation {
-        background-color: #f5f7fa;
-        padding: 15px;
-        border-radius: 6px;
-        border-left: 3px solid #3498db;
-      }
-      @media (max-width: 600px) {
-        .img-placeholder {
-          width: 160px;
-          height: 220px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
         }
-        .info-list li {
-          flex-direction: column;
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
         }
-      }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #eee;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .personal-info {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        .personal-info p {
+            margin: 0.3rem 0;
+        }
+        .personal-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .personal-info a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+        .edu-details, .skill-list, .exp-item, .other-skill-list, .self-appraisal {
+            margin-left: 0.5rem;
+        }
+        .major-courses {
+            margin-top: 0.8rem;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 0.6rem 0;
+        }
+        .exp-item {
+            margin-bottom: 1.2rem;
+        }
+        .exp-time {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.3rem;
+        }
+        .exp-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .exp-desc {
+            color: #666;
+            line-height: 1.7;
+        }
+        .self-appraisal {
+            color: #666;
+            line-height: 1.7;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        /* 响应式适配 */
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>hxw个人简历</h1>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部：个人基本信息 -->
+        <header>
+            <!-- 头像：请替换src为实际图片路径（如GitHub仓库中的images文件夹路径） -->
+            <img src="./images/personal-avatar.jpg" alt="郝兴旺-个人头像" class="avatar" onerror="this.src='https://via.placeholder.com/120';this.alt='头像占位图'">
+            <h1>郝兴旺</h1>
+            <p>工业设计专业 · 东北大学本科在读</p>
+            <div class="personal-info">
+                <p>年龄：21岁 | 籍贯：河北石家庄</p>
+                <p>电话：<a href="tel:15230100592">15230100592</a></p>
+                <p>邮箱：<a href="mailto:2534408686@qq.com">2534408686@qq.com</a></p>
+            </div>
+        </header>
 
-    <!-- 个人信息模块 -->
-    <div class="section">
-      <h2>个人信息</h2>
-      <div class="personal-info">
-        <ul class="info-list">
-          <li><span>年龄：</span><span>21岁</span></li>
-          <li><span>籍贯：</span><span>河北石家庄</span></li>
-          <li><span>电话：</span><span>1523010****</span></li>
-          <li><span>邮箱：</span><span>253440****@qq.com</span></li>
-        </ul>
-      </div>
-    </div>
+        <!-- 教育背景 -->
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="edu-details">
+                <p><strong>2022.09 - 2026.06</strong> | 东北大学 | 工业设计 | 本科</p>
+                <div class="major-courses">
+                    <p><strong>主修课程：</strong>机械设计、机械原理、工程力学、机械制图、产品设计、智能家居设计、产品材料与工艺、设计心理学、厨电产品设计、计算机辅助产品设计</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- 教育背景模块 -->
-    <div class="section">
-      <h2>教育背景</h2>
-      <ul class="info-list">
-        <li><span>时间：</span><span>2022.09 - 2026.06</span></li>
-        <li><span>学校：</span><span>东北大学</span></li>
-        <li><span>学历：</span><span>本科</span></li>
-        <li><span>专业：</span><span>工业设计</span></li>
-      </ul>
-      <div style="margin-top: 15px">
-        <h3 style="font-size: 16px; color: #3498db; margin-bottom: 8px">
-          主修课程：
-        </h3>
-        <ul class="course-list">
-          <li>机械设计、机械原理、工程力学、机械制图</li>
-          <li>产品设计、智能家居设计、产品材料与工艺</li>
-          <li>设计心理学、厨电产品设计、计算机辅助产品设计</li>
-        </ul>
-      </div>
-    </div>
+        <!-- 专业技能 -->
+        <section id="professional-skills">
+            <h2>专业技能</h2>
+            <ul class="skill-list">
+                <li><strong>仿真与硬件开发：</strong>掌握Ansys基础使用；了解STM32外设（GPIO/UART等）开发；了解Arduino平台ESP8266开发与MQTT网络协议</li>
+                <li><strong>编程语言：</strong>掌握Python/C语言基础</li>
+                <li><strong>建模与渲染：</strong>熟练Rhino/Blender建模；掌握Keyshot渲染；熟练Blender演示动画制作、场景搭建；掌握SolidWorks建模</li>
+                <li><strong>工程制图与设计：</strong>熟练CAD制图；熟练使用Photoshop进行设计辅助</li>
+            </ul>
+        </section>
 
-    <!-- 专业技能模块 -->
-    <div class="section">
-      <h2>专业技能</h2>
-      <div class="skill-category">
-        <h3>嵌入式与编程能力</h3>
-        <ul class="skill-list">
-          <li>了解STM32外设GPIO/UART等开发及I2C通信协议</li>
-          <li>了解ESP8266开发与MQTT网络协议</li>
-          <li>掌握Python/C语言基础、Uniapp前端搭建</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>设计工具</h3>
-        <ul class="skill-list">
-          <li>熟练Rhino/Blender建模、Keyshot渲染</li>
-          <li>掌握Blender演示动画制作、场景搭建</li>
-          <li>熟练CAD制图</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>办公与语言能力</h3>
-        <ul class="skill-list">
-          <li>熟练MS Office（Word、PPT、Excel）</li>
-          <li>通过英语CET4，能阅读专业英文技术文档</li>
-        </ul>
-      </div>
-    </div>
+        <!-- 实践经历 -->
+        <section id="practical-experience">
+            <h2>实践经历</h2>
+            <div class="exp-list">
+                <!-- 项目1 -->
+                <div class="exp-item">
+                    <div class="exp-time">2024.09 - 2024.11</div>
+                    <div class="exp-title">本溪钢铁公司巡检机器车设计（校企合作项目）</div>
+                    <div class="exp-desc">
+                        针对钢铁厂区复杂环境巡检需求，基于企业提供的底盘尺寸、续航标准，使用Rhino完成包含内部结构的3D建模；优化巡检范围提升20%，最终方案获企业认定为优秀设计。
+                    </div>
+                </div>
 
-    <!-- 项目经历模块 -->
-    <div class="section">
-      <h2>项目经历</h2>
-      <div class="project-item">
-        <h3>本溪钢铁公司巡检机器车设计</h3>
-        <div class="project-time">2024.09 - 2024.11</div>
-        <p>
-          与本溪钢铁公司展开校企合作设计巡检机器车项目，针对钢铁厂区复杂环境巡检需求，基于企业提供的防爆、续航标准，用Rhino完成3D结构建模，优化巡检范围提升20%；最终方案获企业优秀设计奖，纳入厂区智能化改造备选方案。
-        </p>
-      </div>
-      <div class="project-item">
-        <h3>沈阳中新科技开发有限公司AR眼镜</h3>
-        <div class="project-time">2025.07 - 2025.08</div>
-        <p>
-          作为组内核心开发者，负责该公司AR眼镜产品中无人机功能的可视化展示；用Blender构建无人机精细3D模型（含20+可交互部件），通过Unity实现动态飞行路径模拟与场景切换；演示动画因交互流畅度和场景还原度高获公司一等奖。
-        </p>
-      </div>
-      <div class="project-item">
-        <h3>厨余垃圾处理系统</h3>
-        <div class="project-time">2025.03 - 2025.04</div>
-        <p>
-          独立完成从调研到落地的全流程设计，调研20+家庭厨余处理痛点，设计“粉碎+脱水”一体化结构；用Blender完成系统装配动画演示，基于STM32
-          C6T6开发板编写自动检测、运行控制及结束提醒代码，实现垃圾将满溢时触发警报；获专业老师“技术可实现性强”评价。
-        </p>
-      </div>
-      <div class="project-item">
-        <h3>Helloleiboo宠物喂食器改良</h3>
-        <div class="project-time">2025.04 - 2025.06</div>
-        <p>
-          针对市面上已有品牌的宠物喂食器进行设计改良；使用Arduino
-          IDE自主编写esp8266
-          D1开发板的温湿度监控、OLED屏数据显示及MQTT远程提醒功能代码；通过Rhino结合Blender完成3D模型制作和使用场景渲染，最终产品模型获优秀评价。
-        </p>
-      </div>
-    </div>
+                <!-- 项目2 -->
+                <div class="exp-item">
+                    <div class="exp-time">2023.11 - 2023.12</div>
+                    <div class="exp-title">工程训练</div>
+                    <div class="exp-desc">
+                        系统学习车工、铁工、焊工、钳工、数控加工等加工工艺，独立操作各类机床设备；掌握不同加工工艺的操作流程与参数设置技巧；熟练运用AutoCAD优化工艺流程，提升生产效率，复杂件合格率高，评议结果为优秀。
+                    </div>
+                </div>
 
-    <!-- 个人评价模块 -->
-    <div class="section">
-      <h2>个人评价</h2>
-      <div class="personal-evaluation">
-        <p>
-          具备岗位所需的专业知识与综合素质，拥有良好的沟通合作能力；心态稳定、乐于学习，接受能力强，能快速适应新环境与新任务；性格乐观积极，对待工作认真负责，注重细节与成果落地。
-        </p>
-      </div>
+                <!-- 项目3 -->
+                <div class="exp-item">
+                    <div class="exp-time">2025.05 - 2025.06</div>
+                    <div class="exp-title">机械设计课程设计</div>
+                    <div class="exp-desc">
+                        完成二级传动系统设计，包含轴、齿轮及箱体的尺寸设计；对轴和齿轮在工作环境中的强度进行校核；通过CAD完成箱体、齿轮、轴的草图及装配图绘制，评议结果为优秀。
+                    </div>
+                </div>
+
+                <!-- 项目4 -->
+                <div class="exp-item">
+                    <div class="exp-time">2025.04 - 2025.06</div>
+                    <div class="exp-title">Helloleiboo宠物喂食器改良</div>
+                    <div class="exp-desc">
+                        针对市面现有宠物喂食器进行设计改良；使用Arduino IDE自主编写ESP8266 D1开发板的数据网络接口API调用、OLED屏数据显示及MQTT远程提醒功能代码；通过Rhino结合Blender完成3D模型制作与使用场景渲染，制作产品实物模型，获得优秀评价。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 其他技能 -->
+        <section id="other-skills">
+            <h2>其他技能</h2>
+            <ul class="other-skill-list">
+                <li><strong>办公能力：</strong>熟练使用MS Office（Word、PPT、Excel），可高效完成文档撰写、演示文稿制作与数据整理</li>
+                <li><strong>英语能力：</strong>通过英语CET-4考试，具备英文技术文档阅读能力</li>
+            </ul>
+        </section>
+
+        <!-- 个人评价 -->
+        <section id="self-appraisal">
+            <h2>个人评价</h2>
+            <div class="self-appraisal">
+                具备岗位所需的专业知识与综合素质，掌握工业设计领域核心技能；拥有良好的沟通合作能力，能快速融入团队协作；心态稳定、乐于学习，接受能力强，可快速适应新环境与新任务；性格乐观积极，面对挑战能保持专注与耐心，致力于通过设计解决实际问题。
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2024 郝兴旺 | 个人简历 - 托管于GitHub Pages</p>
+        </footer>
     </div>
-  </body>
+</body>
 </html>
