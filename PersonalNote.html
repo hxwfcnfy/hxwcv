@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PersonalNote</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f7f9fc 0%, #eaf2fb 100%);
+        color: #222;
+        padding: 36px 18px;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .header-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 40px 30px;
+        text-align: center;
+        margin-bottom: 42px;
+        border: 1px solid #e4ecf5;
+        box-shadow: 0 18px 45px rgba(72, 132, 206, 0.12);
+    }
+
+    .avatar-icon {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #5b8def, #36cffb);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        box-shadow: 0 10px 24px rgba(59, 123, 224, 0.28);
+    }
+
+    .avatar-icon span {
+        color: #fff;
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #2f6fdd, #12b5e0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .subtitle {
+        color: #6b7785;
+        font-size: 16px;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+    }
+
+    .info-line {
+        color: #556270;
+        font-size: 15px;
+        background: #f1f6fc;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 999px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+        padding-left: 14px;
+        border-left: 5px solid #5b8def;
+        color: #2c3a4b;
+    }
+
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 22px;
+    }
+
+    .skill-card {
+        background: #ffffff;
+        border: 1px solid #e4ecf5;
+        border-radius: 18px;
+        padding: 22px;
+        cursor: pointer;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        box-shadow: 0 8px 18px rgba(64, 120, 190, 0.08);
+        overflow: hidden;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-6px);
+        border-color: #92b8ff;
+        box-shadow: 0 16px 30px rgba(59, 123, 224, 0.18);
+    }
+
+    .skill-card:active {
+        transform: scale(0.98);
+    }
+
+    .skill-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .skill-card h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+        color: #2c3a4b;
+    }
+
+    .skill-card .brief {
+        font-size: 14px;
+        color: #606e7d;
+        line-height: 1.6;
+    }
+
+    .skill-detail {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease, opacity 0.35s ease, margin-top 0.35s ease;
+        margin-top: 0;
+    }
+
+    .skill-card.active .skill-detail {
+        max-height: 220px;
+        opacity: 1;
+        margin-top: 14px;
+    }
+
+    .skill-detail p {
+        font-size: 14px;
+        color: #4f5d6c;
+        line-height: 1.75;
+        padding-top: 12px;
+        border-top: 1px dashed #d9e4f1;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 50px;
+        color: #8899aa;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="header-card">
+        <div class="avatar-icon">
+            <span>Y</span>
+        </div>
+        <h1>yxxw</h1>
+        <div class="subtitle">PersonalNote · 个人简介</div>
+        <div class="info-line">2004｜东北大学本科</div>
+    </div>
+
+    <h2 class="section-title">技能清单</h2>
+
+    <div class="skill-grid">
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#5fa85f,#478c47)">K</div>
+            <h3>Kali Linux</h3>
+            <p class="brief">熟悉Kali环境配置、内置工具使用，了解基础安全测试环境搭建。</p>
+            <div class="skill-detail">
+                <p>熟悉Kali Linux环境部署与系统配置，能够合理配置靶场环境；熟练使用系统内置的安全相关工具，了解渗透测试环境搭建思路，仅在授权靶场进行合法安全实验。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#ff8c42,#e06a1c)">O</div>
+            <h3>OWASP</h3>
+            <p class="brief">了解OWASP安全规范与漏洞分类标准，熟悉常见Web安全风险原理。</p>
+            <div class="skill-detail">
+                <p>熟悉OWASP漏洞分类标准，了解常见Web漏洞的成因、原理与防御思路；能够按照OWASP安全规范，对Web应用进行基础风险识别与安全评估。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#ff5555,#d63030)">B</div>
+            <h3>BurpSuite</h3>
+            <p class="brief">熟悉抓包、重放、扫描，掌握HTTP请求分析与基础代理配置。</p>
+            <div class="skill-detail">
+                <p>能够使用BurpSuite完成HTTP抓包、请求重放与基础扫描，熟悉代理配置、参数分析和请求修改流程，用于授权环境下的Web安全测试与学习研究。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#61afef,#3f80d6)">C++</div>
+            <h3>C++17 / 20</h3>
+            <p class="brief">掌握现代C++语法，熟悉C++17、C++20新特性与工程开发。</p>
+            <div class="skill-detail">
+                <p>掌握现代C++基础语法与面向对象设计，熟悉C++17、C++20常用新特性，了解STL、智能指针、多线程与工程化开发方式，能够编写中小型程序模块。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#f2994a,#d97a24)">BL</div>
+            <h3>Blender</h3>
+            <p class="brief">熟悉三维建模、材质、灯光与渲染，能够完成简单作品制作。</p>
+            <div class="skill-detail">
+                <p>熟悉Blender工作流程，包括模型创建、UV拆分、材质编辑、灯光布置与渲染输出；能够独立完成基础三维场景、产品模型或视觉展示作品。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#4285f4,#255dcc)">SW</div>
+            <h3>Solidworks</h3>
+            <p class="brief">了解零件建模、装配与工程图输出，适合机械类结构表达。</p>
+            <div class="skill-detail">
+                <p>了解Solidworks零件设计、装配关系和工程图生成流程，能够完成常规机械结构建模，并按要求输出基础工程图纸与三维结构展示文件。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#a855f7,#7b2cbf)">IDA</div>
+            <h3>IDA Pro</h3>
+            <p class="brief">了解静态反汇编、函数识别与二进制程序基础分析。</p>
+            <div class="skill-detail">
+                <p>熟悉IDA Pro基础界面与静态分析流程，能够进行函数识别、交叉引用查看和简单程序逻辑分析，仅用于合法软件分析与授权研究。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#a25cff,#7a2fdd)">Fig</div>
+            <h3>Figma</h3>
+            <p class="brief">熟悉界面设计、组件与自动布局，能够输出UI原型。</p>
+            <div class="skill-detail">
+                <p>熟悉Figma界面设计流程，包括组件创建、自动布局、原型连接与设计交付；能够完成移动端页面、网页模块和交互原型设计。</p>
+            </div>
+        </div>
+
+        <div class="skill-card" onclick="toggleCard(this)">
+            <div class="skill-icon" style="background:linear-gradient(135deg,#2c84c2,#165a8a)">SQL</div>
+            <h3>MySQL</h3>
+            <p class="brief">熟悉建表、查询、索引与基础数据库管理。</p>
+            <div class="skill-detail">
+                <p>掌握MySQL常用操作，包括库表创建、数据增删改查、索引设计与基础查询优化；能够完成关系型数据库结构设计与日常数据管理。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 yxxw | PersonalNote
+    </div>
+
+</div>
+
+<script>
+    function toggleCard(card) {
+        const isActive = card.classList.contains("active");
+
+        // 点击同一张：展开 / 收起
+        if (isActive) {
+            card.classList.remove("active");
+            return;
+        }
+
+        // 点击其他卡片：先收起全部，再展开当前
+        document.querySelectorAll(".skill-card").forEach(c => {
+            c.classList.remove("active");
+        });
+        card.classList.add("active");
+    }
+</script>
+</body>
+</html>
